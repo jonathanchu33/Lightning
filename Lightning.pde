@@ -6,12 +6,12 @@ int lightningQuadrant = (int)(Math.random()*4);
 
 void setup()
 {
-  size(300,300);
-  background(255,255,255);
-  strokeWeight(3);
+	size(300,300);
 }
 void draw()
 {
+	background(0,0,0);
+	strokeWeight(3);
 	stroke((int)(Math.random()*255),(int)(Math.random()*255),(int)(Math.random()*255));
 	while(startX<300 && startX>0 && startY<300 && startY>0)
 	{
@@ -38,8 +38,8 @@ void draw()
 		line(startX,startY,endX,endY);
 		startX = endX;
 		startY = endY;
-		rubiksCube();
 	}
+	rubiksCube();
 }
 void mousePressed()
 {
@@ -56,6 +56,9 @@ int sideLength = 50;
 
 void rubiksCube()
 {
+	//setup
+	strokeWeight(1);
+	stroke(0);
 	//white Side
 	fill(255);
 	quad(cubeX,cubeY,cubeX,cubeY+sideLength,cubeX-sideLength*5/6,cubeY+sideLength*2/3,cubeX-sideLength*5/6,cubeY-sideLength/3);

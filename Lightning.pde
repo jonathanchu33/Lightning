@@ -1,47 +1,58 @@
 int startX = 150;
 int startY = 150;
-int endX = 0;
-int endY = 150;
-int lightningQuadrant = (int)(Math.random()*4+1);
+int endX;
+int endY;
+int lightningQuadrant = (int)(Math.random()*4);
 
 void setup()
 {
   size(300,300);
-  background(255,0,0);
-  strokeWeight(5);
+  background(255,255,255);
+  strokeWeight(3);
 }
 void draw()
 {
 	stroke((int)(Math.random()*255),(int)(Math.random()*255),(int)(Math.random()*255));
-	if (lightningQuadrant == 1)
+	while(startX<300 && startX>0 && startY<300 && startY>0)
 	{
-
+		if(lightningQuadrant < 1)
+		{
+			endX = startX + (int)(Math.random()*10);
+			endY = startY + (int)(Math.random()*19-9);
+		}
+		else if(lightningQuadrant < 2)
+		{
+			endX = startX + (int)(Math.random()*19-9);
+			endY = startY - (int)(Math.random()*10);
+		}
+		else if(lightningQuadrant < 3)
+		{
+			endX = startX - (int)(Math.random()*10);
+			endY = startY + (int)(Math.random()*19-9);
+		}
+		else
+		{
+			endX = startX + (int)(Math.random()*19-9);
+			endY = startY + (int)(Math.random()*10);
+		}
+		line(startX,startY,endX,endY);
+		startX = endX;
+		startY = endY;
+		rubiksCube();
 	}
-	if (lightningQuadrant == 2)
-	{
-
-	}
-	if (lightningQuadrant == 3)
-	{
-
-	}
-	if (lightningQuadrant == 4)
-	{
-
-	}
-	rubiksCube();
 }
 void mousePressed()
 {
-	startX = 0;
+	lightningQuadrant = (int)(Math.random()*4);
+	startX = 150;
 	startY = 150;
-	endX = 0;
-	endY = 150;
+	endX = startX;
+	endY = startY;
 }
 
 int cubeX = 150;
 int cubeY = 150;
-int sideLength = 150;
+int sideLength = 50;
 
 void rubiksCube()
 {

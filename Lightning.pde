@@ -7,6 +7,7 @@ int lightningQuadrant = (int)(Math.random()*4);
 void setup()
 {
 	size(300,300);
+	frameRate(20);
 }
 void draw()
 {

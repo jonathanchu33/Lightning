@@ -8,6 +8,8 @@ void setup()
 {
 	size(300,300);
 	frameRate(20);
+	background(0,0,0);
+	strokeWeight(3);
 }
 void draw()
 {
@@ -60,6 +62,7 @@ void rubiksCube()
 	//setup
 	strokeWeight(1);
 	stroke(0);
+	
 	//white Side
 	fill(255);
 	quad(cubeX,cubeY,cubeX,cubeY+sideLength,cubeX-sideLength*5/6,cubeY+sideLength*2/3,cubeX-sideLength*5/6,cubeY-sideLength/3);

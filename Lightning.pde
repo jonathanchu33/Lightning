@@ -21,21 +21,21 @@ void draw()
 		if(lightningQuadrant < 1)
 		{
 			endX = startX + (int)(Math.random()*10);
-			endY = startY + (int)(Math.random()*19-9);
+			endY = startY + ((int)(Math.random()*19)-9);
 		}
 		else if(lightningQuadrant < 2)
 		{
-			endX = startX + (int)(Math.random()*19-9);
+			endX = startX + ((int)(Math.random()*19)-9);
 			endY = startY - (int)(Math.random()*10);
 		}
 		else if(lightningQuadrant < 3)
 		{
 			endX = startX - (int)(Math.random()*10);
-			endY = startY + (int)(Math.random()*19-9);
+			endY = startY + ((int)(Math.random()*19)-9);
 		}
 		else
 		{
-			endX = startX + (int)(Math.random()*19-9);
+			endX = startX + ((int)(Math.random()*19)-9);
 			endY = startY + (int)(Math.random()*10);
 		}
 		line(startX,startY,endX,endY);
